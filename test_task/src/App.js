@@ -1,8 +1,10 @@
-import './App.css';
+import './App.scss';
+import DropDownList from './drop-down-list/DropDownList';
 
 function App() {
 	return (
 		<div className="App">
+			<DropDownList></DropDownList>
 		</div>
 	);
 }
