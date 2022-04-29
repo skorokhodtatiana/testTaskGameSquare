@@ -1,11 +1,12 @@
 import './App.scss';
-import DropDownList from './drop-down-list/DropDownList';
-import GettingData from './getting-data/GettingData'
+// import DropDownList from './getting-data/GettingData';
+import GettingData from './getting-data/GettingData';
+
 
 function App() {
 	return (
 		<div className="App">
-			<DropDownList></DropDownList>
+
 			<GettingData></GettingData>
 		</div>
 	);
