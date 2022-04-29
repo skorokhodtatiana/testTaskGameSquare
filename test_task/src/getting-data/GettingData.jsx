@@ -35,11 +35,25 @@ const GettingData = () => {
 			}
 		)
 	}, [])
-	// {items.map((item) =>(
-	// 	console.log(item.name),
-	// 	<DropDownList value={item.name}
-	// 	></DropDownList>
-	// ) )}
+
+	if (error) {
+		return <div>Ошибка: {error.message}</div>;
+		} else if (!isLoaded) {
+		return <div>Загрузка...</div>;
+		} else {
+			return (
+				<div>
+					<select>
+						<option disabled>Choose level</option>
+				{items.map((item) => (
+					console.log(item.name),
+						<option>{item.name}</option>
+				))}
+					</select>
+				</div>
+			)
+		}
+	
 }
 
 export default GettingData;
