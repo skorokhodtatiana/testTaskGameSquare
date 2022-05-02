@@ -44,12 +44,13 @@ const GettingData = () => {
 			return (
 				<div>
 					<select>
-						<option disabled>Choose level</option>
+						<option autoFocus disabled>Choose level</option>
 				{items.map((item) => (
 					console.log(item.name),
 						<option>{item.name}</option>
 				))}
 					</select>
+					<button>Start</button>
 				</div>
 			)
 		}
