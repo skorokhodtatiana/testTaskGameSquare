@@ -60,9 +60,13 @@ const GettingData = () => {
 						<option key={item.name} value={item.field}>{item.name}</option>
 					))}
 				</select>
-				<button onChange={handleStart}>Start</button>
+				<button onClick={handleStart}>Start</button>
 			</div>
-			{isSelected && start && (<Table></Table>)}
+			{isSelected && start && (
+			<Table
+			option={isSelected}
+			></Table>
+			)}
 		</div>
 	)
 }
