@@ -37,7 +37,6 @@ const GettingData = () => {
 		.then(async (result) => {
 			const data = await result.json();
 			setItems(data);
-			console.log(data);
 		})
 		.catch((error) => {
 			setError(error);
@@ -56,7 +55,6 @@ const GettingData = () => {
 				>
 					{!isSelected && <option>Choose level</option>}
 					{items.map((item) => (
-						console.log(item.name),
 						<option key={item.name} value={item.field}>{item.name}</option>
 					))}
 				</select>
