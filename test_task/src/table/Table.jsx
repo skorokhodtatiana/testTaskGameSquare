@@ -10,9 +10,15 @@ const Table = (props) => {
 	}
 	return(
 		<div>
-			{arr.map((item, indexItem) => {
+			{arr.map((itemRow, indexItemRow) => {
 		return (
-			<div key={`${item}${indexItem}`}>one</div>
+			<div className="row" key={`${itemRow}${indexItemRow}`}>
+				{arr.map((itemCell, indexItemCell) => {
+					return(
+						<div className="cell" key={`${itemCell}${indexItemCell}`}>two</div>
+					)
+				})}
+			</div>
 		)
 	})}
 		</div>
