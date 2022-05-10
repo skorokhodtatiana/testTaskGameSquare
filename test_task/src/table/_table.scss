@@ -1,12 +1,9 @@
 .row {
-	width: 100%;
-	border: 1px solid red;
 	display: flex;
 	border-right: none;
 }
 
 .cell {
-	width: 30%;
-	height: 30%;
-	border-right: 1px solid red;
+	padding: 13px;
+	border: 1px solid red;
 }
