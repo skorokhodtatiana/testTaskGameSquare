@@ -1,12 +1,20 @@
+import { useEffect, useState } from "react";
+
 import './_table.scss';
 
 const Table = (props) => {
+
+	const [isSelect, setisSelect] = useState(false);
+
 	const {option} = props;
 	console.log(option);
 	const arr = [];
 	let numSquare = Number(option);
 	for (numSquare; numSquare > 0; numSquare--) {
 		arr.push(option);
+	}
+	const handleChangeColor = () => {
+		setisSelect(true);
 	}
 	return(
 		<div>
@@ -15,7 +23,7 @@ const Table = (props) => {
 			<div className="row" key={`${itemRow}${indexItemRow}`}>
 				{arr.map((itemCell, indexItemCell) => {
 					return(
-						<div className="cell" key={`${itemCell}${indexItemCell}`}></div>
+						<div onClick={handleChangeColor} className={isSelect ? "cell" : "blueCell"} key={`${itemCell}${indexItemCell}`}></div>
 					)
 				})}
 			</div>
