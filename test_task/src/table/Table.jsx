@@ -16,6 +16,8 @@ const Table = (props) => {
 	const handleChangeColor = () => {
 		setisSelect(true);
 	}
+
+	let colorSquare = isSelect ? "cell" : "blueCell";
 	return(
 		<div>
 			{arr.map((itemRow, indexItemRow) => {
@@ -23,7 +25,7 @@ const Table = (props) => {
 			<div className="row" key={`${itemRow}${indexItemRow}`}>
 				{arr.map((itemCell, indexItemCell) => {
 					return(
-						<div onClick={handleChangeColor} className={isSelect ? "cell" : "blueCell"} key={`${itemCell}${indexItemCell}`}></div>
+						<div onMouseDown={handleChangeColor} className={colorSquare} key={`${itemCell}${indexItemCell}`}></div>
 					)
 				})}
 			</div>
