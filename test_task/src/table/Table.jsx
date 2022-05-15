@@ -24,8 +24,10 @@ const Table = (props) => {
 		return (
 			<div className="row" key={`${itemRow}${indexItemRow}`}>
 				{arr.map((itemCell, indexItemCell) => {
+					const itemPath = `${indexItemRow}--${indexItemCell}`
+					console.log(itemPath);
 					return(
-						<div onMouseDown={handleChangeColor} className={colorSquare} key={`${itemCell}${indexItemCell}`}></div>
+						<div onMouseEnter={() => handleChangeColor(itemPath)} className={colorSquare} key={`${itemCell}${indexItemCell}`}></div>
 					)
 				})}
 			</div>
