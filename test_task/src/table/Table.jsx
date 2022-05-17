@@ -13,7 +13,7 @@ const Table = (props) => {
 	for (numSquare; numSquare > 0; numSquare--) {
 		arr.push(option);
 	}
-	const handleChangeColor = () => {
+	const handleChangeColor = (itemPath) => {
 		setisSelect(true);
 	}
 
@@ -27,7 +27,7 @@ const Table = (props) => {
 					const itemPath = `${indexItemRow}--${indexItemCell}`
 					console.log(itemPath);
 					return(
-						<div onMouseEnter={() => handleChangeColor(itemPath)} className={colorSquare} key={`${itemCell}${indexItemCell}`}></div>
+						<div onMouseEnter={() => handleChangeColor(itemPath)} className={'cell'} key={`${itemCell}${indexItemCell}`}></div>
 					)
 				})}
 			</div>
