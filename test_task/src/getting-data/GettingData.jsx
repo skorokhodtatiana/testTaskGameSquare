@@ -2,27 +2,13 @@ import { useEffect, useState } from "react";
 
 import Table from '../table/Table'; 
 
-// const DropDownList = (props) => {
-// 	const {value} = props;
-// 	return (
-// 		<div>
-// 			<select>
-// 				<option autoFocus disabled value="Select">Select</option>
-// 				<option value="1">{value}</option>
-// 				<option value="2">{value}</option>
-// 				<option value="3">{value}</option>
-// 			</select>
-// 			<button>Start</button>
-// 		</div>
-// 	)
-// }
-
 const GettingData = () => {
 	const [error, setError] = useState(null);
 	const [isLoaded, setIsLoaded] = useState(true);
 	const [items, setItems] = useState([]);
 	const [isSelected, setIsSelected] = useState('');
 	const[start, setStart] = useState(false);
+	const [hovered, setHovered] = useState({});
 
 	const handleChange = (event) => {
 		setIsSelected(event.target.value);
@@ -30,6 +16,10 @@ const GettingData = () => {
 
 	const handleStart = () => {
 		setStart(true);
+	}
+
+	const handleOver = (key) => {
+		setHovered((prevState) => ({...prevState, [key]: !prevState[key]}));
 	}
 
 	useEffect(() => {
@@ -55,14 +45,16 @@ const GettingData = () => {
 				>
 					{!isSelected && <option>Choose level</option>}
 					{items.map((item) => (
-						<option key={item.name} value={item.field}>{item.name}</option>
+						<option key = {item.name} value={item.field}>{item.name}</option>
 					))}
 				</select>
-				<button onClick={handleStart}>Start</button>
+				<button onClick = {handleStart}>Start</button>
 			</div>
 			{isSelected && start && (
 			<Table
-			option={isSelected}
+			option = {isSelected}
+			hoveredItems = {hovered}
+			onMouseEnter={handleOver}
 			></Table>
 			)}
 		</div>

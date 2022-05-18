@@ -6,15 +6,12 @@ const Table = (props) => {
 
 	const [isSelect, setisSelect] = useState(false);
 
-	const {option} = props;
+	const {option, onMouseEnter, hoveredItems} = props;
 	console.log(option);
 	const arr = [];
 	let numSquare = Number(option);
 	for (numSquare; numSquare > 0; numSquare--) {
 		arr.push(option);
-	}
-	const handleChangeColor = (itemPath) => {
-		setisSelect(true);
 	}
 
 	let colorSquare = isSelect ? "cell" : "blueCell";
@@ -24,10 +21,10 @@ const Table = (props) => {
 		return (
 			<div className="row" key={`${itemRow}${indexItemRow}`}>
 				{arr.map((itemCell, indexItemCell) => {
-					const itemPath = `${indexItemRow}--${indexItemCell}`
+					const itemPath = `${indexItemRow + 1}--${indexItemCell + 1}`
 					console.log(itemPath);
 					return(
-						<div onMouseEnter={() => handleChangeColor(itemPath)} className={'cell'} key={`${itemCell}${indexItemCell}`}></div>
+						<div onMouseEnter={() => onMouseEnter(itemPath)} className={`cell ${hoveredItems[itemPath] ? 'blueCell' : ''}`} key={`${itemCell}${indexItemCell}`}></div>
 					)
 				})}
 			</div>
@@ -35,12 +32,6 @@ const Table = (props) => {
 	})}
 		</div>
 	)
-	
-
-	// const rows1 = (() => new Array());
-	// const rows = (() => new Array().fill(option),[option]);
-	// console.log(arr);
-		
 }
 
 export default Table;
