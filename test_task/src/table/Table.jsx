@@ -18,18 +18,17 @@ const Table = (props) => {
 	return(
 		<div>
 			{arr.map((itemRow, indexItemRow) => {
-		return (
-			<div className="row" key={`${itemRow}${indexItemRow}`}>
-				{arr.map((itemCell, indexItemCell) => {
-					const itemPath = `${indexItemRow + 1}--${indexItemCell + 1}`
-					console.log(itemPath);
-					return(
-						<div onMouseEnter={() => onMouseEnter(itemPath)} className={`cell ${hoveredItems[itemPath] ? 'blueCell' : ''}`} key={`${itemCell}${indexItemCell}`}></div>
-					)
-				})}
-			</div>
-		)
-	})}
+				return (
+					<div className="row" key={`${itemRow}${indexItemRow}`}>
+						{arr.map((itemCell, indexItemCell) => {
+							const itemPath = `${indexItemRow + 1}--${indexItemCell + 1}`
+							return(
+								<div onMouseEnter={() => onMouseEnter(itemPath)} className={`cell ${hoveredItems[itemPath] ? 'blueCell' : ''}`} key={`${itemCell}${indexItemCell}`}></div>
+							)
+						})}
+					</div>
+				)
+			})}
 		</div>
 	)
 }
