@@ -49,6 +49,7 @@ const GettingData = () => {
 					))}
 				</select>
 				<button onClick = {handleStart}>Start</button>
+				<div className={'listBlueSquare'}></div>
 			</div>
 			{isSelected && start && (
 			<Table
