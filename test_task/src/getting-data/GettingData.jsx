@@ -10,6 +10,8 @@ const GettingData = () => {
 	const[start, setStart] = useState(false);
 	const [hovered, setHovered] = useState({});
 	const [isListBlueSquare, setisListBlueSquare] = useState('');
+	const [isArr, setIsArr] = useState([]);
+	const [arr, setArr] = useState([]);
 
 	const handleChange = (event) => {
 		setIsSelected(event.target.value);
@@ -22,11 +24,9 @@ const GettingData = () => {
 	const handleOver = (key) => {
 		setHovered((prevState) => ({...prevState, [key]: !prevState[key]}));
 		setisListBlueSquare(key);
-		const arr = [];
-		arr.push(key)
-
-		const list = document.getElementById('list')
-		list.innerHTML = arr;
+		isArr.push(key);
+		const list = document.getElementById('list');
+		list.innerText = isArr;
 	}
 
 	useEffect(() => {

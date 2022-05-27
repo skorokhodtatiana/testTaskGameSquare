@@ -7,7 +7,7 @@ const Table = (props) => {
 	const [isSelect, setisSelect] = useState(false);
 
 	const {option, onMouseEnter, hoveredItems} = props;
-	console.log(option);
+	// console.log(option);
 	const arr = [];
 	let numSquare = Number(option);
 	for (numSquare; numSquare > 0; numSquare--) {
