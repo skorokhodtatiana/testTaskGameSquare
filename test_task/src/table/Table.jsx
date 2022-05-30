@@ -13,7 +13,6 @@ const Table = (props) => {
 		arr.push(option);
 	}
 
-	let colorSquare = isSelect ? "cell" : "blueCell";
 	return(
 		<div>
 			{arr.map((itemRow, indexItemRow) => {
