@@ -4,8 +4,6 @@ import './_table.scss';
 
 const Table = (props) => {
 
-	const [isSelect, setisSelect] = useState(false);
-
 	const {option, onMouseEnter, hoveredItems} = props;
 	const arr = [];
 	let numSquare = Number(option);
