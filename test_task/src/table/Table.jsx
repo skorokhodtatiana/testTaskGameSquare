@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 import './_table.scss';
 
 const Table = (props) => {
