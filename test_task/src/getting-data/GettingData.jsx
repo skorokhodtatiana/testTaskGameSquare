@@ -9,12 +9,11 @@ const GettingData = () => {
 	const [isSelected, setIsSelected] = useState('');
 	const[start, setStart] = useState(false);
 	const [hovered, setHovered] = useState({});
-	const [isListBlueSquare, setisListBlueSquare] = useState('');
-	const [isArr, setIsArr] = useState([]);
-	const [arr, setArr] = useState([]);
 
 	const handleChange = (event) => {
 		setIsSelected(event.target.value);
+		setStart(false)
+		setHovered({});
 	}
 
 	const handleStart = () => {
@@ -23,10 +22,6 @@ const GettingData = () => {
 
 	const handleOver = (key) => {
 		setHovered((prevState) => ({...prevState, [key]: !prevState[key]}));
-		setisListBlueSquare(key);
-		isArr.push(key);
-		const list = document.getElementById('list');
-		list.innerText = isArr;
 	}
 
 	useEffect(() => {
@@ -56,7 +51,6 @@ const GettingData = () => {
 					))}
 				</select>
 				<button onClick = {handleStart}>Start</button>
-				<div id="list" className="listBlueSquare"></div>
 			</div>
 			{isSelected && start && (
 			<Table
