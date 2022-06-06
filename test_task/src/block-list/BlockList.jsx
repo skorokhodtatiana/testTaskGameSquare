@@ -5,9 +5,9 @@ const ShowListBlue = () => {
 	// const [arr, setArr] = useState([]);
 
 	return (
-		<>
+		<div>
 			<div id="list" className="listBlueSquare"></div>
-		</>
+		</div>
 	)
 
 }
