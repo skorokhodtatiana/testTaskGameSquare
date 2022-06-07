@@ -1,4 +1,4 @@
-const ShowListBlue = () => {
+const ShowListBlue = (props) => {
 
 	// const [isListBlueSquare, setisListBlueSquare] = useState('');
 	// const [isArr, setIsArr] = useState([]);
@@ -9,7 +9,6 @@ const ShowListBlue = () => {
 			<div id="list" className="listBlueSquare"></div>
 		</div>
 	)
-
 }
 
 export default ShowListBlue;
