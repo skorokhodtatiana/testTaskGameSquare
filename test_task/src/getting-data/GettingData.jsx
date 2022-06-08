@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-import Table from '../table/Table'; 
+import Table from '../table/Table';
+import BlockList from '../block-list/BlockList';
 
 const GettingData = () => {
 	const [error, setError] = useState(null);
@@ -59,6 +60,7 @@ const GettingData = () => {
 			onMouseEnter={handleOver}
 			></Table>
 			)}
+			{isSelected && start && <BlockList hoveredItems = {hovered}></BlockList>}
 		</div>
 	)
 }

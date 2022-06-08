@@ -1,4 +1,4 @@
-const ShowListBlue = (props) => {
+const ShowListBlue = ({hoveredItems}) => {
 
 	// const [isListBlueSquare, setisListBlueSquare] = useState('');
 	// const [isArr, setIsArr] = useState([]);
