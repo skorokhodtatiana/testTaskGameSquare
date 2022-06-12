@@ -1,7 +1,6 @@
 import './_table.scss';
 
 const Table = (props) => {
-
 	const {option, onMouseEnter, hoveredItems} = props;
 	const arr = [];
 	let numSquare = Number(option);
