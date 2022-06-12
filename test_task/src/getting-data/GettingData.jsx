@@ -55,9 +55,9 @@ const GettingData = () => {
 			</div>
 			{isSelected && start && (
 			<Table
-			option = {isSelected}
-			hoveredItems = {hovered}
-			onMouseEnter={handleOver}
+				option = {isSelected}
+				hoveredItems = {hovered}
+				onMouseEnter={handleOver}
 			></Table>
 			)}
 			{isSelected && start && <BlockList hoveredItems = {hovered}></BlockList>}
